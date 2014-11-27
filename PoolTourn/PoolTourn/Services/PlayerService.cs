@@ -17,9 +17,9 @@ namespace PoolTourn.Services
             _playerprovider = playerprovider;
         }
 
-        public IEnumerable<PlayerModel> GetAll(int TournamentId)
+        public IEnumerable<Player> GetAll(int TournamentId)
         {
-            return _playerprovider.Retrieve(TournamentId);
+            return _playerprovider.RetrieveByTournament(TournamentId);
         }
     }
 }

@@ -9,6 +9,6 @@ namespace PoolTourn.Data.Providers
 {
     public interface IPlayerProvider
     {
-        IEnumerable<PlayerModel> Retrieve(int TournamentID);
+        IEnumerable<Player> RetrieveByTournament(int TournamentID);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PoolTourn.Domain.Models
 {
-    public class PlayerModel
+    public class Player
     {
         /// <summary>
         /// ID of Player

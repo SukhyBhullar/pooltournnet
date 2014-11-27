@@ -19,7 +19,7 @@ namespace PoolTourn.Controllers.api
         }
 
         // GET: api/Player
-        public IEnumerable<PlayerModel> Get()
+        public IEnumerable<Player> Get()
         {
             return _playerservice.GetAll(1);
         }
@@ -31,12 +31,12 @@ namespace PoolTourn.Controllers.api
         }
 
         // POST: api/Player
-        public void Post([FromBody]PlayerModel value)
+        public void Post([FromBody]Player value)
         {
         }
 
         // PUT: api/Player/5
-        public void Put(int id, [FromBody]PlayerModel value)
+        public void Put(int id, [FromBody]Player value)
         {
         }
 
