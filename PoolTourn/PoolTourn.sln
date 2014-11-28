@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolTourn.Data.EF", "PoolTo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolTourn.Data", "PoolTourn.Data\PoolTourn.Data.csproj", "{874BF8F5-DEC3-44D2-9779-858365F99928}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PoolTourn.Test", "PoolTourn.Test\PoolTourn.Test.csproj", "{83DF4BED-D428-44E8-8103-F0D0E330D134}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{874BF8F5-DEC3-44D2-9779-858365F99928}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{874BF8F5-DEC3-44D2-9779-858365F99928}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{874BF8F5-DEC3-44D2-9779-858365F99928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83DF4BED-D428-44E8-8103-F0D0E330D134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83DF4BED-D428-44E8-8103-F0D0E330D134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83DF4BED-D428-44E8-8103-F0D0E330D134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83DF4BED-D428-44E8-8103-F0D0E330D134}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

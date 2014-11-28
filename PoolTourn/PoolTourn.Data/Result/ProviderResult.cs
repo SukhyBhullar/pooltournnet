@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PoolTourn.Data.EF.Result
+namespace PoolTourn.Data.Result
 {
 
     public enum ProviderStatusCode

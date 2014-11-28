@@ -1,4 +1,4 @@
-﻿using PoolTourn.Data.EF.Result;
+﻿using PoolTourn.Data.Result;
 using PoolTourn.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace PoolTourn.Data.Providers
     public interface ITournamentProvider
     {
         ProviderResult<Tournament> Create(Tournament tournament);
-        Tournament RetrieveById(int ID);
-
+        Tournament RetrieveOne(Func<Tournament, bool> Clause);
+        
     }
 }
