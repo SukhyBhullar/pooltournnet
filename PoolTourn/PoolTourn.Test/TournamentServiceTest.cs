@@ -15,13 +15,48 @@ namespace PoolTourn.Test
         public void DoesTournamentCreateIfNoTournamentInProgress()
         {
 
-            Assert.Fail();
+            //Arrange
+            var RtnObj = new Tournament() { InProgress = true };
+            var NewTournament = new Tournament(){ ID = 0, InProgress = false, Name="test"} ;
+            var ProvResult = new ProviderResult<Tournament>(){ Status = ProviderStatusCode.OK, Value = NewTournament };
+
+            var Provider = new Mock<ITournamentProvider>();
+            Provider.Setup(x => x.RetrieveOne(It.IsAny<Func<Tournament, bool>>()))
+                .Returns(RtnObj);
+            Provider.Setup(x => x.Create(It.IsAny<Tournament>()))
+                .Returns(ProvResult);
+
+            ITournamentService TournamentServ = new TournamentService(Provider.Object);
+
+            //Act
+            var result = TournamentServ.CreateNewTournament(NewTournament);
+
+            //Assert
+            Assert.IsNull(result);
         }
 
         [TestMethod]
         public void DoesTournamentFailToCreateIfTournamentInProgress()
         {
-            Assert.Fail();
+            //Arrange
+
+            var NewTournament = new Tournament() { ID = 0, InProgress = false, Name = "test" };
+            var ProvResult = new ProviderResult<Tournament>() { Status = ProviderStatusCode.OK, Value = NewTournament };
+
+            var Provider = new Mock<ITournamentProvider>();
+            Provider.Setup(x => x.RetrieveOne(It.IsAny<Func<Tournament, bool>>()))
+                .Returns<Tournament>(null);
+            Provider.Setup(x => x.Create(It.IsAny<Tournament>()))
+                .Returns(ProvResult);
+
+            ITournamentService TournamentServ = new TournamentService(Provider.Object);
+
+            //Act
+            var result = TournamentServ.CreateNewTournament(NewTournament);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.AreEqual(true, result.InProgress); 
         }
 
         [TestMethod]

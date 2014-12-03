@@ -23,7 +23,26 @@ namespace PoolTourn.Services
 
         public Tournament CreateNewTournament(Tournament NewTournament)
         {
-            throw new NotImplementedException();
+
+            if (GetTournamentInProgress() == null)
+            {
+
+                NewTournament.InProgress = true;
+
+                var result = _tournamentProvider.Create(NewTournament);
+                if (result.Status == Data.Result.ProviderStatusCode.OK)
+                {
+                    return result.Value;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
