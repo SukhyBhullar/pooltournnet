@@ -224,7 +224,8 @@
     <Compile Include="App_Start\UnityResolver.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\api\PlayerController.cs" />
+    <Compile Include="Controllers\api\Tournament\PlayerController.cs" />
+    <Compile Include="Controllers\api\TournamentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -41,7 +41,8 @@ namespace PoolTourn.App_Start
             // Player
             container.RegisterType<IPlayerService, PlayerService>();
             container.RegisterType<IPlayerProvider, Data.EF.Providers.PlayerProvider>();
-
+            container.RegisterType<ITournamentProvider, Data.EF.Providers.TournamentProvider>();
+            container.RegisterType<ITournamentService, TournamentService>();
             GlobalConfiguration.Configuration.DependencyResolver = new UnityResolver(container);
             
         }
