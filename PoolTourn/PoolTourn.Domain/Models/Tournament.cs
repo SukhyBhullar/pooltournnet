@@ -11,7 +11,5 @@ namespace PoolTourn.Domain.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public bool InProgress { get; set; }
-
-        public virtual ICollection<Player> Players { get; set; }
     }
 }

@@ -3,10 +3,7 @@ using PoolTourn.Data.Result;
 using PoolTourn.Data.Providers;
 using PoolTourn.Domain.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PoolTourn.Data.EF.Providers
 {
@@ -21,14 +18,18 @@ namespace PoolTourn.Data.EF.Providers
                 db.SaveChanges();
             }
 
-            return new ProviderResult<Tournament>() { Status = ProviderStatusCode.OK, Value = tournament};
+            return new ProviderResult<Tournament>() { Status = ProviderStatusCode.Ok, Value = tournament};
         }
         
-        public Tournament RetrieveOne(Func<Tournament, bool> Clause)
+        public ProviderResult<Tournament> GetTournamentInProgress()
         {
             using (TournContext db = new TournContext())
             {
-                return db.Tournament.SingleOrDefault(Clause);
+                return new ProviderResult<Tournament>
+                {
+                    Status = ProviderStatusCode.Ok,
+                    Value = db.Tournament.SingleOrDefault(x => x.InProgress == false)
+                };
             }
         }
     }

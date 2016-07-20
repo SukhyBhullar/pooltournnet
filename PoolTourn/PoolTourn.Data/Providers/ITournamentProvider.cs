@@ -11,7 +11,7 @@ namespace PoolTourn.Data.Providers
     public interface ITournamentProvider
     {
         ProviderResult<Tournament> Create(Tournament tournament);
-        Tournament RetrieveOne(Func<Tournament, bool> Clause);
+        ProviderResult<Tournament> GetTournamentInProgress();
         
     }
 }

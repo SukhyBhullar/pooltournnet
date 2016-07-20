@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="Context\TournContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\PlayerProvider.cs" />
     <Compile Include="Providers\TournamentProvider.cs" />
   </ItemGroup>
   <ItemGroup>

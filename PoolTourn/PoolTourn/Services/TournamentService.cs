@@ -18,31 +18,24 @@ namespace PoolTourn.Services
 
         public Tournament GetTournamentInProgress()
         {
-            return _tournamentProvider.RetrieveOne(x => x.InProgress == false);
+            return _tournamentProvider.GetTournamentInProgress().Value;
         }
 
         public Tournament CreateNewTournament(Tournament NewTournament)
         {
-
             if (GetTournamentInProgress() == null)
             {
 
                 NewTournament.InProgress = true;
 
                 var result = _tournamentProvider.Create(NewTournament);
-                if (result.Status == Data.Result.ProviderStatusCode.OK)
+                if (result.Status == Data.Result.ProviderStatusCode.Ok)
                 {
                     return result.Value;
                 }
-                else
-                {
-                    return null;
-                }
-            }
-            else
-            {
                 return null;
             }
+            return null;
         }
     }
 }
